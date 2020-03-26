@@ -20,24 +20,31 @@ import java.util.Scanner;
  */
 public class ProyectoContarPalabras {
 
+    static Scanner sc = new Scanner (System.in);
     /**
      * @param args the command line arguments
      */
-    static Scanner sc = new Scanner (System.in);
     public static void main(String[] args) {
         
-        inicioApp llamada = new inicioApp();
+        char[] letra = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 
+        'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+        'y','z','0','1','2','3','4','5','6','7','8','9',',','.',';',':','-','_',
+        '[',']','{','}','!','¡','?','¿','=',')','(','/','&','%','$','"'};
+        int[] repeat =  new int [letra.length]; 
+        
+        ContarPalabras contarPalabras = new ContarPalabras();
+        ImprimirPantalla imprimirPantalla = new ImprimirPantalla();
                
         System.out.print("Introduce una cadena de caracteres: ");
         String chain_recived = sc.nextLine();
         String chain = chain_recived.toLowerCase();
         
-        int caracteresTotales=llamada.contarCaracteresTotal(chain);
-        int numPalabras = llamada.contarNumeroPalabras(chain);        
-        int[] CaracteresXTipo = llamada.contarTodosCaracteres(chain);        
+        int caracteresTotales=contarPalabras.contarCaracteresTotal(chain, letra);
+        int numPalabras = contarPalabras.contarNumeroPalabras(chain,letra);        
+        int[] CaracteresXTipo = contarPalabras.contarTodosCaracteres(chain,letra,repeat);        
         
-        System.out.println(llamada.textoCaracteresTotal(caracteresTotales));
-        System.out.println(llamada.textoNumeroPalabras(numPalabras));
-        System.out.println(llamada.textoTodosCaracteres(CaracteresXTipo));                     
+        System.out.println(imprimirPantalla.textoCaracteresTotal(caracteresTotales));
+        System.out.println(imprimirPantalla.textoNumeroPalabras(numPalabras));
+        System.out.println(imprimirPantalla.textoTodosCaracteres(CaracteresXTipo, letra));                     
     }    
 }
