@@ -12,6 +12,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import proyectocontarpalabras.ContarPalabras;
+import proyectocontarpalabras.ImprimirPantalla;
 
 /**
  *
@@ -70,5 +71,13 @@ public class ProyectoContarPalabrasTest {
         assertTrue(repeat[4] == 3);
         assertTrue(repeat[5] == 0);
         assertNotNull(repeat[13]);        
+    }
+    
+    @Test
+    public void imprimirPantallaTest(){
+        ImprimirPantalla  imprimirPantallaTest = new ImprimirPantalla();
+        assertNotNull(imprimirPantallaTest.textoCaracteresTotal(5));
+        assertNotNull(imprimirPantallaTest.textoNumeroPalabras(3));
+        assertNotNull(imprimirPantallaTest.textoTodosCaracteres(repeat, letra));
     }
 }
