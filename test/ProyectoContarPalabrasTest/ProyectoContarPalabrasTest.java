@@ -44,6 +44,11 @@ public class ProyectoContarPalabrasTest {
     @After
     public void tearDown() {
     }
+    /**
+     * Se realiza el test del primer metodo de la clase ContarPalabras 
+     * comprobando si el resultado es correcto, y si no es mayor o menor que dicho
+     * resultado correcto.
+     */
     @Test
     public void contarCaracteresTotalTest() {
         ContarPalabras contarPalabrasTest = new ContarPalabras("Hola que tal", letra, repeat);
@@ -53,6 +58,12 @@ public class ProyectoContarPalabrasTest {
         assertFalse(respuesta < 10);        
     }
     
+    /**
+     * Se realiza el test del segundo metodo de la clase contarPalabras comprobando
+     * si el resultado que da es el real, si no comete el fallo de contar la 'y' ya
+     * que no esta considerado como palabra y si no es mayor o menor que
+     * el resultado correcto.
+     */
     @Test
     public void contarNumeroPalabrasTest(){
         ContarPalabras contarPalabrasTest = new ContarPalabras("Bien y tu que tal estas", letra, repeat);
@@ -63,6 +74,13 @@ public class ProyectoContarPalabrasTest {
         assertFalse(respuesta < 5);
     }
     
+    /**
+     * Se realiza el test del tercer metodo de la clase ContarPalabras 
+     * comprobando si algunas de las posiciones del array son correcto si por
+     * ejemplo uno de las posiciones no esta null y contiene algun tipo de 
+     * informacion y por ultimo si alguno de los campos de caracteres no 
+     * repetidos es igual a 0.
+     */
     @Test
     public void contarTodosCaracteresTest(){
         ContarPalabras contarPalabrasTest = new ContarPalabras("Bien, Me alegro mucho", letra, repeat);
@@ -73,6 +91,10 @@ public class ProyectoContarPalabrasTest {
         assertNotNull(repeat[13]);        
     }
     
+    /**
+     * Se realiza el test de los 3 metodos de la clase imprimirPantalla
+     * comprobando si devuelven contenido y no devuelven valor nulo.
+     */
     @Test
     public void imprimirPantallaTest(){
         ImprimirPantalla  imprimirPantallaTest = new ImprimirPantalla();
