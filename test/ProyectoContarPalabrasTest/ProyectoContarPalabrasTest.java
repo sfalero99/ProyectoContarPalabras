@@ -51,4 +51,14 @@ public class ProyectoContarPalabrasTest {
         assertFalse(respuesta > 10);
         assertFalse(respuesta < 10);        
     }
+    
+    @Test
+    public void contarNumeroPalabrasTest(){
+        ContarPalabras contarPalabrasTest = new ContarPalabras("Bien y tu que tal estas", letra, repeat);
+        int respuesta = contarPalabrasTest.contarNumeroPalabras();
+        assertTrue(respuesta == 5);
+        assertFalse(respuesta == 6);
+        assertFalse(respuesta > 6);
+        assertFalse(respuesta < 5);
+    }
 }
