@@ -61,4 +61,14 @@ public class ProyectoContarPalabrasTest {
         assertFalse(respuesta > 6);
         assertFalse(respuesta < 5);
     }
+    
+    @Test
+    public void contarTodosCaracteresTest(){
+        ContarPalabras contarPalabrasTest = new ContarPalabras("Bien, Me alegro mucho", letra, repeat);
+        repeat = contarPalabrasTest.contarTodosCaracteres();
+        assertTrue(repeat[0] == 1);
+        assertTrue(repeat[4] == 3);
+        assertTrue(repeat[5] == 0);
+        assertNotNull(repeat[13]);        
+    }
 }
