@@ -32,16 +32,15 @@ public class ProyectoContarPalabras {
         '[',']','{','}','!','¡','?','¿','=',')','(','/','&','%','$','"'};
         int[] repeat =  new int [letra.length]; 
         
-        ContarPalabras contarPalabras = new ContarPalabras();
-        ImprimirPantalla imprimirPantalla = new ImprimirPantalla();
-               
         System.out.print("Introduce una cadena de caracteres: ");
-        String chain_recived = sc.nextLine();
-        String chain = chain_recived.toLowerCase();
+        String chain = sc.nextLine();
         
-        int caracteresTotales=contarPalabras.contarCaracteresTotal(chain, letra);
-        int numPalabras = contarPalabras.contarNumeroPalabras(chain,letra);        
-        int[] CaracteresXTipo = contarPalabras.contarTodosCaracteres(chain,letra,repeat);        
+        ContarPalabras contarPalabras = new ContarPalabras(chain, letra, repeat);
+        ImprimirPantalla imprimirPantalla = new ImprimirPantalla();                     
+        
+        int caracteresTotales=contarPalabras.contarCaracteresTotal();
+        int numPalabras = contarPalabras.contarNumeroPalabras();        
+        int[] CaracteresXTipo = contarPalabras.contarTodosCaracteres();        
         
         System.out.println(imprimirPantalla.textoCaracteresTotal(caracteresTotales));
         System.out.println(imprimirPantalla.textoNumeroPalabras(numPalabras));

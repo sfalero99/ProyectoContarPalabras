@@ -13,12 +13,12 @@ public class ContarPalabras {
 
     String cadena;
     char letra [];
-    int [] repeticion;
+    int [] repeat;
     
     public ContarPalabras(String frase, char[] ArrayLetras, int[] ArrayRepeticion) {
-        this.cadena=frase;
+        this.cadena=frase.toLowerCase();    
         this.letra=ArrayLetras;
-        this.repeticion=ArrayRepeticion;
+        this.repeat=ArrayRepeticion;
         
     }
 
@@ -26,7 +26,7 @@ public class ContarPalabras {
     
     }
     
-    public int contarCaracteresTotal(String cadena, char[] letra){
+    public int contarCaracteresTotal(){
         int count_caracters = 0;
         for (int i = 0; i < cadena.length(); i++) {
             char letra_cadena = cadena.charAt(i);
@@ -41,7 +41,7 @@ public class ContarPalabras {
         return count_caracters;
     }
     
-    public int contarNumeroPalabras(String cadena, char[] letra){
+    public int contarNumeroPalabras(){
         int count_words = 0;
         int dosChars  = 0;
         
@@ -66,7 +66,7 @@ public class ContarPalabras {
         return count_words;
     }
     
-    public int[] contarTodosCaracteres(String cadena, char[] letra, int[] repeat){
+    public int[] contarTodosCaracteres(){
         for (int i = 0; i < cadena.length(); i++) {
             char letra_cadena = cadena.charAt(i);
             if (letra_cadena != ' '){
