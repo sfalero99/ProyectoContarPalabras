@@ -11,12 +11,19 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import proyectocontarpalabras.ContarPalabras;
 
 /**
  *
  * @author Sergio
  */
 public class ProyectoContarPalabrasTest {
+    
+    char[] letra = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 
+        'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+        'y','z','0','1','2','3','4','5','6','7','8','9',',','.',';',':','-','_',
+        '[',']','{','}','!','¡','?','¿','=',')','(','/','&','%','$','"'};
+    int[] repeat =  new int [letra.length]; 
     
     public ProyectoContarPalabrasTest() {
     }
@@ -36,6 +43,12 @@ public class ProyectoContarPalabrasTest {
     @After
     public void tearDown() {
     }
-    // @Test
-    // public void hello() {}
+    @Test
+    public void contarCaracteresTotalTest() {
+        ContarPalabras contarPalabrasTest = new ContarPalabras("Hola que tal", letra, repeat);
+        int respuesta = contarPalabrasTest.contarCaracteresTotal();
+        assertTrue(respuesta == 10);
+        assertFalse(respuesta > 10);
+        assertFalse(respuesta < 10);        
+    }
 }
