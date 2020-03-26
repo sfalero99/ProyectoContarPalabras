@@ -10,5 +10,57 @@ package proyectocontarpalabras;
  * @author Sergio
  */
 public class ContarPalabras {
+    int contarCaracteresTotal(String cadena, char[] letra){
+        int count_caracters = 0;
+        for (int i = 0; i < cadena.length(); i++) {
+            char letra_cadena = cadena.charAt(i);
+            if (letra_cadena != ' '){
+                for (int j = 0; j < letra.length; j++) {            
+                    if (letra[j] == letra_cadena){
+                        count_caracters++;
+                    }   
+                }
+            }
+        }
+        return count_caracters;
+    }
     
+    int contarNumeroPalabras(String cadena, char[] letra){
+        int count_words = 0;
+        int dosChars  = 0;
+        
+        for (int i = 0; i < cadena.length(); i++) {
+            char letra_cadena = cadena.charAt(i);
+            if (letra_cadena != ' '){
+                for (int j = 0; j < letra.length; j++) {            
+                    if (letra[j] == letra_cadena){
+                        dosChars++;
+                    }   
+                }
+            }else{
+                if (dosChars>=2){
+                    count_words++;
+                    dosChars = 0;
+                }
+            }
+        }
+        if (dosChars>=2){
+            count_words++;            
+        }
+        return count_words;
+    }
+    
+    int[] contarTodosCaracteres(String cadena, char[] letra, int[] repeat){
+        for (int i = 0; i < cadena.length(); i++) {
+            char letra_cadena = cadena.charAt(i);
+            if (letra_cadena != ' '){
+                for (int j = 0; j < letra.length; j++) {            
+                    if (letra[j] == letra_cadena){
+                        repeat[j]++;
+                    }   
+                }
+            }
+        }        
+        return repeat;
+    }
 }
