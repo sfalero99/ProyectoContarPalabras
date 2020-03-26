@@ -10,15 +10,16 @@ package proyectocontarpalabras;
  * @author Sergio
  */
 public class ImprimirPantalla {
-    String textoCaracteresTotal(int total){
+    
+    public String textoCaracteresTotal(int total){
         return "El numero total de caracteres sin contar espacios es: " + total;
     }
     
-    String textoNumeroPalabras(int total){
+    public String textoNumeroPalabras(int total){
         return "El numero total de palabras es: " + total;
     }
     
-    String textoTodosCaracteres(int[]total, char[] letra){
+    public String textoTodosCaracteres(int[]total, char[] letra){
         String resultado="";
         for (int i = 0; i < total.length; i++) {
             if (total[i]>1){
