@@ -13,8 +13,8 @@ public class ImprimirPantalla {
     /**
      * Recibe la cantidad total de caracteres desde el main y devuelve el 
      * String que sera impreso desde el main otra vez.
-     * @param total
-     * @return 
+     * @param total Numero total de caracteres
+     * @return El string del resultado del total de caracteres
      */
     public String textoCaracteresTotal(int total){
         return "El numero total de caracteres sin contar espacios es: " + total;
@@ -22,8 +22,8 @@ public class ImprimirPantalla {
     /**
      * Recibe el numero de palabras desde el main y devuelve el String que sera
      * impreso desde el main otra vez. 
-     * @param total
-     * @return 
+     * @param total El numero total de palabras
+     * @return El string del resultado del total de palabras
      */
     public String textoNumeroPalabras(int total){
         return "El numero total de palabras es: " + total;
@@ -33,9 +33,9 @@ public class ImprimirPantalla {
      * el String que sera impreso desde el main, comprobando si hay solamente 
      * una repeticion para enviar el texto en singular o si hay mas de 1 para 
      * mostrar el texto en plural.
-     * @param total
-     * @param letra
-     * @return 
+     * @param total El array de las repeticiones totales de cada caracter
+     * @param letra El array con todos los caracteres
+     * @return El string del resultado de veces que se repite cada caracter.
      */
     public String textoTodosCaracteres(int[]total, char[] letra){
         String resultado="";

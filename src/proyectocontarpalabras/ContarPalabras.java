@@ -16,9 +16,9 @@ public class ContarPalabras {
     /**
      * Constructor de contarPalabras con la frase del usuario y los arrays de las
      * letras y de las repeticiones.
-     * @param frase
-     * @param ArrayLetras
-     * @param ArrayRepeticion 
+     * @param frase Frase esxcrita por el usuario
+     * @param ArrayLetras Array de todos los caracteres disponibles
+     * @param ArrayRepeticion Array de las repeticiones de cada caracter
      */
     public ContarPalabras(String frase, char[] ArrayLetras, int[] ArrayRepeticion) {
         this.cadena=frase.toLowerCase();    
@@ -30,7 +30,7 @@ public class ContarPalabras {
     /**
      * Retorna el numero total de caracteres que hay en la frase sin contar
      * los espacios.
-     * @return 
+     * @return La cuenta total de caracteres
      */
     public int contarCaracteresTotal(){
         int count_caracters = 0;
@@ -50,7 +50,7 @@ public class ContarPalabras {
      * Retorna el numero de palabras que hay en la frase, yo personalmente
      * entiendo como palabra cualquier cadena de texto de 2 o mas caracteres
      * asumiendo que el usuario simpre va a introducir palabras reales.
-     * @return 
+     * @return La cuenta de palabras
      */
     public int contarNumeroPalabras(){
         int count_words = 0;
@@ -79,7 +79,7 @@ public class ContarPalabras {
     /**
      * Retorna un Array identico al de las letras pero esta vez con la suma de la
      * repeticion de cada uno de los caracteres.
-     * @return 
+     * @return El array de repeticiones
      */
     public int[] contarTodosCaracteres(){
         for (int i = 0; i < cadena.length(); i++) {
